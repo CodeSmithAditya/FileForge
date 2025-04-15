@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:padding="16dp"
+    tools:context=".FileConverter">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Converter"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        style="@style/DefaultTextStyle"/>
+
+    <LinearLayout
+        android:id="@+id/SetFile"
+        android:layout_width="280dp"
+        android:layout_height="260dp"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true"
+        android:elevation="5dp"
+        android:background="@drawable/card_border"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:id="@+id/cloudIcon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_file_upload"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/uploadText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supported Files:"
+            android:textSize="15sp"
+            android:layout_marginTop="30dp"
+            style="@style/DefaultTextStyle"/>
+
+        <TextView
+            android:id="@+id/uploadtxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Images, PDF, Word, Excel, PowerPoint"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            style="@style/DefaultTextStyle"/>
+
+        <TextView
+            android:id="@+id/selectFileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select File"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@drawable/rounded_blue"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>

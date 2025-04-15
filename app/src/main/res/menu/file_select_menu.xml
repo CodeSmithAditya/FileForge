@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/from_computer"
+        android:title="From my Computer"/>
+    <item
+        android:id="@+id/by_url"
+        android:title="By URL"/>
+    <item
+        android:id="@+id/from_google_drive"
+        android:title="From Google Drive"/>
+    <item
+        android:id="@+id/from_dropbox"
+        android:title="From Dropbox"/>
+    <item
+        android:id="@+id/from_onedrive"
+        android:title="From OneDrive"/>
+</menu>

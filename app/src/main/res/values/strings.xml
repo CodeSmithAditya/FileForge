@@ -1,0 +1,36 @@
+<resources>
+    <string-array name="unit_options">
+        <item>KB</item>
+        <item>MB</item>
+    </string-array>
+    <string name="app_name">FileForge</string>
+
+    <string-array name="dimension_units">
+        <item>pixel</item>
+        <item>centimeter</item>
+        <item>millimeter</item>
+        <item>inch</item>
+    </string-array>
+
+    <string-array name="social_media_sizes">
+        <item>Select Social Media Preset</item>
+        <item>Facebook Cover (820x312)</item>
+        <item>Facebook Post (1200x630)</item>
+        <item>Facebook Story (1080x1920)</item>
+        <item>Instagram Post (1080x1080)</item>
+        <item>Instagram Reel Cover (1080x1350)</item>
+        <item>Instagram Story (1080x1920)</item>
+        <item>LinkedIn Post (1200x627)</item>
+        <item>LinkedIn Profile Banner (1584x396)</item>
+        <item>Pinterest Pin (1000x1500)</item>
+        <item>Snapchat Story (1080x1920)</item>
+        <item>Twitter/X Header (1500x500)</item>
+        <item>Twitter/X Post (1600x900)</item>
+        <item>WhatsApp DP (640x640)</item>
+        <item>WhatsApp Status (750x1334)</item>
+        <item>YouTube Channel Art (2560x1440)</item>
+        <item>YouTube Thumbnail (1280x720)</item>
+    </string-array>
+
+
+</resources>

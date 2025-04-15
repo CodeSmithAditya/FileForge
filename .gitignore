@@ -1,0 +1,24 @@
+# Gradle files
+.gradle/
+build/
+*/build/
+
+# Local configuration file (SDK path, etc.)
+local.properties
+
+# IDE files
+.idea/
+*.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Captures
+captures/
+
+# Log files
+*.log
+
+# Crashlytics / Firebase
+crashlytics-build.properties
