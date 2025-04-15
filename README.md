@@ -18,10 +18,10 @@
 ## 📸 Screenshots
 
 ### 🔹 Home Screen
-<img src="screenshots/homescreen.png" alt="Home Screen" width="auto" height="600">
+<img src="screenshots/homescreen.png" alt="Home Screen" width="auto" height="200">
 
 ### 🔹 PDF Resizer
-<img src="screenshots/pdf_res.png" alt="PDF Resizer" width="600" height="auto">
+<img src="screenshots/pdf_res.png" alt="PDF Resizer" width="auto" height="200">
 
 ---
 
