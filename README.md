@@ -20,7 +20,7 @@
 ### 🔹 Home Screen and PDF Resizer
 
 <p float="left">
-  <img src="screenshots/homescreen.png" />
+  <img src="screenshots/homescreen.png" width="15%"/>
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img src="screenshots/pdf_res.png" width="15%" />
 </p>
