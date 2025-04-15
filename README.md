@@ -1,6 +1,6 @@
 # 📁 FileForge
 
-FileForge is a modern Android file manager app built with simplicity, speed, and user experience in mind. It allows users to convert and resize files quickly, with an intuitive and efficient interface.
+**FileForge** is an Android app that allows users to convert and resize files (PDF, DOC, PPT, XLS, Images) in a few taps.
 
 ---
 

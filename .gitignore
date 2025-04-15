@@ -1,24 +1,40 @@
-# Gradle files
+# ========================
+# Android & Gradle Stuff
+# ========================
 .gradle/
 build/
 */build/
-
-# Local configuration file (SDK path, etc.)
+captures/
 local.properties
+*.apk
+*.ap_
 
-# IDE files
+# ========================
+# IntelliJ / Android Studio
+# ========================
 .idea/
 *.iml
 
-# OS generated files
+# ========================
+# System Files
+# ========================
 .DS_Store
 Thumbs.db
 
-# Captures
-captures/
-
-# Log files
+# ========================
+# Log Files
+# ========================
 *.log
 
-# Crashlytics / Firebase
+# ========================
+# Firebase / Crashlytics
+# ========================
 crashlytics-build.properties
+fabric.properties
+google-services.json
+
+# ========================
+# Other
+# ========================
+*.keystore
+*.jks
