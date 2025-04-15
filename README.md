@@ -1,45 +1,75 @@
+
 # 📁 FileForge
 
-**FileForge** is an Android app that allows users to convert and resize files (PDF, DOC, PPT, XLS, Images) in a few taps.
+**FileForge** is a powerful and lightweight Android application that enables users to **convert** and **resize** various file types such as PDFs, Word documents, PowerPoint presentations, Excel sheets, and images — all from a clean and intuitive interface.
 
 ---
 
 ## ✨ Features
 
-- 📂 Browse internal storage and directories
-- 🗃️ Open and view files with native intents
-- 🔄 Convert files between various formats (e.g., images, documents,pdf,ppt)
-- 🔲 Resize files such as images and PDFs
-- 🌙 **Dark mode toggle** support *(in development or added)*
-- ⚡ Clean UI and responsive design
+- 📂 **File Explorer Integration** – Browse and select files from your internal storage
+- 🔄 **File Conversion** – Seamlessly convert between formats (PDF, DOC, PPT, XLS, JPG, PNG, etc.)
+- 📏 **Resize Support** – Reduce the size of images and PDF files
+- 🌙 **Dark Mode Toggle** – Support for system dark mode (added or in-progress)
+- 🧭 **Minimal UI** – Fast, responsive, and easy to use
+
+---
+
+## 📱 Screenshots *(optional)*
+
+> *(You can add screenshots later for visual appeal)*  
+> Example: `![App Screenshot](screenshots/main_ui.png)`
 
 ---
 
 ## 🚀 Tech Stack
 
-- **Language:** Java
-- **Framework:** Android SDK
-- **UI:** XML layouts with Material Design principles
-- **Tools:** Android Studio, Git
+| Tech           | Description                      |
+|----------------|----------------------------------|
+| **Java**       | Primary programming language     |
+| **Android SDK**| Base framework for development   |
+| **XML**        | Used for designing UI layouts    |
+| **Material Design** | UI/UX principles for Android apps |
+| **Git & GitHub** | Version control & collaboration |
 
 ---
 
-## 🤝 Contribution
+## 🧩 Folder Structure
 
-- Feel free to fork the repo and suggest improvements. PRs are welcome!
+```
+FileForge/
+├── app/
+│   └── src/
+│       └── main/
+│           ├── java/com/example/fileforge/  # Java source code
+│           ├── res/                         # UI layouts & assets
+│           └── AndroidManifest.xml
+├── build.gradle
+├── .gitignore
+├── README.md
+└── LICENSE
+```
 
 ---
 
-## 📇 Author
+## 📥 How to Contribute
 
-- Aditya Das
-- [LinkedIn](https://www.linkedin.com/in/adadityadas)
-- [GitHub](https://github.com/CodeSmithAditya)
+1. 🍴 Fork the repository
+2. 🛠️ Make your changes
+3. 🔁 Create a Pull Request
+4. 💬 Let's review and merge!
+
+---
+
+## 👤 Author
+
+**Aditya Das**  
+📍 Dr. B. C. Roy Engineering College, Durgapur  
+🔗 [LinkedIn](https://www.linkedin.com/in/adadityadas)  
+🐙 [GitHub](https://github.com/CodeSmithAditya)
 
 ---
 
 ## 📄 License
 
-- This project is licensed under the MIT License.
-
----
+This project is licensed under the **[MIT License](LICENSE)** – feel free to use, modify, and distribute it.
