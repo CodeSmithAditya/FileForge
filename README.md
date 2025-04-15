@@ -15,10 +15,13 @@
 
 ---
 
-## 📱 Screenshots *(optional)*
+## 📸 Screenshots
 
-> *(You can add screenshots later for visual appeal)*  
-> Example: `![App Screenshot](screenshots/main_ui.png)`
+### 🔹 Home Screen
+![Home Screen](screenshots/homescreen.png)
+
+### 🔹 PDF Resizer
+![PDF Resizer](screenshots/pdf_res.png)
 
 ---
 
