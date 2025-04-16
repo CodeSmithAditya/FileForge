@@ -76,6 +76,12 @@ FileForge/
 
 ---
 
+> ⚠️ **Notice:** This project is licensed for personal, educational, and non-commercial use only.  
+> Unauthorized copying, redistribution, or publishing is strictly prohibited.  
+> For usage permissions, contact [adadityadas99@gmail.com](mailto:adadityadas99@gmail.com).
+
+---
+
 ## 📄 License
 
-This project is licensed under the **[MIT License](LICENSE)** – feel free to use, modify, and distribute it.
+This project is protected under a **custom license** – see the [LICENSE](LICENSE) file for details.
