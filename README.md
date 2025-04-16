@@ -1,42 +1,43 @@
 
 # 📁 FileForge
 
-**FileForge** is a powerful and lightweight Android application that enables users to **convert** and **resize** various file types such as PDFs, Word documents, PowerPoint presentations, Excel sheets, and images — all from a clean and intuitive interface.
+**FileForge** is a powerful yet lightweight Android application that allows users to **convert** and **resize** a wide range of file types — including PDFs, Word documents, PowerPoint presentations, Excel spreadsheets, and images — all from a clean, intuitive interface.
 
 ---
 
 ## ✨ Features
 
-- 📂 **File Explorer Integration** – Browse and select files from your internal storage
-- 🔄 **File Conversion** – Seamlessly convert between formats (PDF, DOC, PPT, XLS, JPG, PNG, etc.)
-- 📏 **Resize Support** – Reduce the size of images and PDF files
-- 🌙 **Dark Mode Toggle** – Support for system dark mode (added or in-progress)
-- 🧭 **Minimal UI** – Fast, responsive, and easy to use
+- 📂 **File Explorer Integration** – Easily browse and select files from your device storage
+- 🔄 **File Conversion** – Convert between formats like PDF, DOC, PPT, XLS, JPG, and PNG
+- 📏 **File Resizing** – Compress and resize various file formats, including images, PDFs, and more.
+- 🌙 **Dark Mode Support** – Automatically adapts to your system’s dark mode (in progress)
+- 🧭 **Minimal & Intuitive UI** – Fast, responsive, and user-friendly interface
 
 ---
 
 ## 📸 Screenshots
 
-### 🔹 Home Screen and PDF Resizer
+### 🔹 Home Screen and PDF Resizer Screen
+Here’s a preview of the **Home Screen** and the **PDF Resizer** in action:
 
 <p float="left">
   &nbsp;&nbsp;&nbsp;
-  <img src="screenshots/homescreen.png" width="15%" />
+  <img src="screenshots/homescreen.png" width="22%" alt="Home Screen"/>
   &nbsp;&nbsp;
-  <img src="screenshots/pdf_res.png" width="15%" />
+  <img src="screenshots/pdf_res.png" width="22%" alt="PDF Resizer Screen"/>
 </p>
 
 ---
 
 ## 🚀 Tech Stack
 
-| Tech           | Description                      |
-|----------------|----------------------------------|
-| **Java**       | Primary programming language     |
-| **Android SDK**| Base framework for development   |
-| **XML**        | Used for designing UI layouts    |
-| **Material Design** | UI/UX principles for Android apps |
-| **Git & GitHub** | Version control & collaboration |
+| Tech                   | Description                      |
+|------------------------|----------------------------------|
+| **Java**               | Primary programming language     |
+| **Android SDK**        | Base framework for development   |
+| **XML**                | Used for designing UI layouts    |
+| 🌟 **Material Design** | UI/UX principles for Android apps |
+| **Git & GitHub**       | Version control & collaboration |
 
 ---
 
@@ -48,7 +49,7 @@ FileForge/
 │   └── src/
 │       └── main/
 │           ├── java/com/example/fileforge/  # Java source code
-│           ├── res/                         # UI layouts & assets
+│           ├── res/                         # Layouts, drawables, and other UI resources
 │           └── AndroidManifest.xml
 ├── build.gradle
 ├── .gitignore
@@ -64,6 +65,8 @@ FileForge/
 2. 🛠️ Make your changes
 3. 🔁 Create a Pull Request
 4. 💬 Let's review and merge!
+5. 📌 Check [Issues](https://github.com/CodeSmithAditya/FileForge/issues) and contribute!
+6. ✨ Suggestions for improvements and new features are always welcome!
 
 ---
 
@@ -84,4 +87,8 @@ FileForge/
 
 ## 📄 License
 
-This project is protected under a **custom license** – see the [LICENSE](LICENSE) file for details.
+This project is protected under a **custom non-commercial license** – see the [LICENSE](LICENSE) file for details.  
+You may view or reference the code for learning purposes only.
+
+> 📌 Redistribution, modification, or publishing is **not allowed** without permission.  
+> For usage rights, contact [adadityadas99@gmail.com](mailto:adadityadas99@gmail.com).

@@ -1,10 +1,12 @@
-FileForge - Custom License
+Copyright (c) 2025 Aditya Das
 
-© 2025 Aditya Das. All rights reserved.
+Permission is granted to view and reference this code for educational or personal purposes only.
 
-This software is licensed for personal, educational, and non-commercial use only.
-Redistribution, modification, sublicensing, or publishing this software or any part of it is strictly prohibited without the express written consent of the author.
+The following actions are strictly prohibited without prior written permission from the author:
+- Reuse or modify the code in any other published software
+- Redistribute or re-upload the source code, in whole or in part
+- Use the codebase, UI design, or app functionality for commercial purposes
+- Publish the app on any platform (Google Play Store, Apple App Store, etc.)
 
-You may view and learn from the source code, but any reuse of the code or resources in other projects requires permission.
-
+This project is licensed for personal, educational, and non-commercial use only.
 For permissions, contact: adadityadas99@gmail.com
