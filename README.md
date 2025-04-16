@@ -71,7 +71,7 @@ FileForge/
 
 **Aditya Das**   
 🔗 [LinkedIn](https://www.linkedin.com/in/adadityadas)  
-🐙 [GitHub](https://github.com/CodeSmithAditya)
+🐙 [GitHub](https://github.com/CodeSmithAditya)  
 📧 [adadityadas99@gmail.com](mailto:adadityadas99@gmail.com)
 
 ---
