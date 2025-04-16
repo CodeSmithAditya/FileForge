@@ -9,7 +9,7 @@
 
 - 📂 **File Explorer Integration** – Easily browse and select files from your device storage
 - 🔄 **File Conversion** – Convert between formats like PDF, DOC, PPT, XLS, JPG, and PNG
-- 📏 **File Resizing** – Compress and resize various file formats, including images, PDFs, and more.
+- 📏 **File Resizing** – Compress and resize a variety of file formats, including images, PDFs, and more.
 - 🌙 **Dark Mode Support** – Automatically adapts to your system’s dark mode (in progress)
 - 🧭 **Minimal & Intuitive UI** – Fast, responsive, and user-friendly interface
 
@@ -31,13 +31,13 @@ Here’s a preview of the **Home Screen** and the **PDF Resizer** in action:
 
 ## 🚀 Tech Stack
 
-| Tech                   | Description                      |
-|------------------------|----------------------------------|
-| **Java**               | Primary programming language     |
-| **Android SDK**        | Base framework for development   |
-| **XML**                | Used for designing UI layouts    |
-| 🌟 **Material Design** | UI/UX principles for Android apps |
-| **Git & GitHub**       | Version control & collaboration |
+| Tech                  | Description                      |
+|-----------------------|----------------------------------|
+| **Java**              | Primary programming language     |
+| **Android SDK**       | Base framework for development   |
+| **XML**               | Used for designing UI layouts    |
+| **Material Design** | UI/UX principles for Android apps |
+| **Git & GitHub**      | Version control & collaboration |
 
 ---
 
@@ -76,12 +76,6 @@ FileForge/
 🔗 [LinkedIn](https://www.linkedin.com/in/adadityadas)  
 🐙 [GitHub](https://github.com/CodeSmithAditya)  
 📧 [adadityadas99@gmail.com](mailto:adadityadas99@gmail.com)
-
----
-
-> ⚠️ **Notice:** This project is licensed for personal, educational, and non-commercial use only.  
-> Unauthorized copying, redistribution, or publishing is strictly prohibited.  
-> For usage permissions, contact [adadityadas99@gmail.com](mailto:adadityadas99@gmail.com).
 
 ---
 
