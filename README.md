@@ -69,10 +69,10 @@ FileForge/
 
 ## 👤 Author
 
-**Aditya Das**  
-📍 Dr. B. C. Roy Engineering College, Durgapur  
+**Aditya Das**   
 🔗 [LinkedIn](https://www.linkedin.com/in/adadityadas)  
 🐙 [GitHub](https://github.com/CodeSmithAditya)
+📧 [adadityadas99@gmail.com](mailto:adadityadas99@gmail.com)
 
 ---
 
