@@ -7,6 +7,8 @@
   <img src="https://img.shields.io/github/last-commit/CodeSmithAditya/FileForge" />
 </p>
 
+&nbsp;
+
 **FileForge** is a powerful yet lightweight Android application that allows users to **convert** and **resize** a wide range of file types — including PDFs, Word documents, PowerPoint presentations, Excel spreadsheets, and images — all from a clean, intuitive interface.
 
 ---
