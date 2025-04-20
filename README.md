@@ -5,6 +5,7 @@
   <img src="https://img.shields.io/badge/Language-Java-blue.svg" />
   <img src="https://img.shields.io/badge/Platform-Android-green.svg" />
   <img src="https://img.shields.io/github/last-commit/CodeSmithAditya/FileForge" />
+  <img src="https://img.shields.io/badge/license-Custom--Personal--Use-blue" />
 </p>
 
 ![License: Personal Use Only](https://img.shields.io/badge/license-Custom--Personal--Use-blue)
