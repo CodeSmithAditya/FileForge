@@ -8,8 +8,6 @@
   <img src="https://img.shields.io/badge/license-Custom--Personal--Use-blue" />
 </p>
 
-![License: Personal Use Only](https://img.shields.io/badge/license-Custom--Personal--Use-blue)
-
 **FileForge** is a powerful yet lightweight Android application that allows users to **convert** and **resize** a wide range of file types — including PDFs, Word documents, PowerPoint presentations, Excel spreadsheets, and images — all from a clean, intuitive interface.
 
 ---
