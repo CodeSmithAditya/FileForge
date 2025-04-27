@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -47,7 +46,7 @@ public class FileConverter extends AppCompatActivity {
                             String mimeType = getContentResolver().getType(fileUri);
 
                             if (mimeType != null && supportedMimeTypes.contains(mimeType)) {
-                                Intent intent = new Intent(this, ConverterOptions.class);
+                                Intent intent = new Intent(this, pptConv.class);
                                 intent.putExtra("fileUri", fileUri.toString());
                                 startActivity(intent);
                             } else {

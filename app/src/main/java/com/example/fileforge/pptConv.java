@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
 
-public class ConverterOptions extends AppCompatActivity {
+public class pptConv extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_converter_options);
+        setContentView(R.layout.activity_ppt_conv);
 
         TextView fileNameTextView = findViewById(R.id.fileNameTextView);
 
