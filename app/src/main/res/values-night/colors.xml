@@ -5,4 +5,11 @@
     <color name="colorPrimary">#BB86FC</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+    <color name="green_light">#8BC34A</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_medium">#558B2F</color>
+    <color name="green_accent">#AED581</color>
+    <color name="green_accent_dark">#689F38</color>
+    <color name="spinner_adaptive_background">#3A3A3A</color>
+    <color name="spinner_adaptive_border">#5A5A5A</color>
 </resources>

@@ -8,4 +8,11 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="imgchkbox">#2E7D32</color>
+    <color name="green_light">#8BC34A</color>
+    <color name="green_dark">#2E7D32</color>
+    <color name="green_medium">#558B2F</color>
+    <color name="green_accent">#AED581</color>
+    <color name="green_accent_dark">#689F38</color>
+    <color name="spinner_adaptive_background">#FFFFFF</color>
+    <color name="spinner_adaptive_border">#CCCCCC</color>
 </resources>

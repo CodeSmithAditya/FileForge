@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/imgConvScrollView"
+    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".imgConv">
+    tools:context=".xlsConv">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,20 +20,19 @@
             style="@style/DefaultTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Image Converter"
+            android:layout_marginTop="60dp"
+            android:text="Excel Converter"
             android:textSize="30sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/selectedImageView"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="10dp"
-            android:contentDescription="Selected Image Preview"
-            android:scaleType="centerInside"
-            android:background="#EEEEEE" />
+            android:id="@+id/fileIcon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="20dp"
+            android:contentDescription="File Icon"
+            android:src="@drawable/excel_icon" />
 
         <TextView
             android:id="@+id/fileNameTextView"
@@ -42,70 +40,64 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
+            android:ellipsize="end"
             android:gravity="center"
-            android:text="No image selected"
-            android:textSize="18sp"
-            android:textStyle="normal"
-            android:ellipsize="middle"
-            android:maxLines="2" />
+            android:maxLines="1"
+            android:text="No file selected"
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <TextView
             style="@style/DefaultTextStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Convert image to:"
-            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            android:text="Convert to:"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <Spinner
             android:id="@+id/conversionOptionsSpinner"
             android:layout_width="wrap_content"
-            android:minWidth="220dp"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
-            android:layout_marginBottom="10dp" android:background="@drawable/spinner_bordered_background" />
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/spinner_bordered_background"
+            android:minWidth="220dp" />
 
-        <CheckBox
-            android:id="@+id/ocrCheckBox" style="@style/DefaultTextStyle"
+        <Button
+            android:id="@+id/processFileButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"
-            android:text="Use OCR (for DOCX, DOC, or TXT output)" android:textSize="16sp"
-            android:visibility="gone"/> <Button
-        android:id="@+id/processFileButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/button_selected"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:text="Convert Image"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+            android:layout_marginTop="60dp"
+            android:background="@drawable/button_selected"
+            android:paddingStart="24dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="12dp"
+            android:text="Start Conversion"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
 
         <LinearLayout
             android:id="@+id/progressContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="gone"
             android:padding="16dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center_horizontal">
+            android:visibility="gone">
 
             <ProgressBar
                 android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:progressDrawable="@drawable/custom_progress_bar_gradient"
+                android:max="100"
                 android:progress="0"
-                android:max="100" />
+                android:progressDrawable="@drawable/custom_progress_bar_gradient" />
+
             <TextView
                 android:id="@+id/progressText"
                 style="@style/DefaultTextStyle"

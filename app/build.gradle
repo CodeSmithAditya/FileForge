@@ -1,3 +1,40 @@
+// Function to read multiple API keys from local.properties
+// Place this at the top of your build.gradle file
+def getApiKeysList() {
+    def props = new Properties()
+    def keysList = new ArrayList<String>()
+    def localPropsFile = rootProject.file("local.properties")
+
+    if (localPropsFile.exists()) {
+        new FileInputStream(localPropsFile).withCloseable { stream ->
+            props.load(stream)
+        }
+        // Iterate through properties and collect keys that start with the prefix
+        // Sort by the number suffix to maintain a predictable order if desired (e.g., KEY_1, KEY_2, KEY_10)
+        def prefixedKeys = []
+        props.each { key, value ->
+            if (key.toString().startsWith("CLOUDCONVERT_API_KEY_")) {
+                prefixedKeys.add([key: key.toString(), value: value.toString()])
+            }
+        }
+        // Sort based on the numeric part of the key name
+        prefixedKeys.sort { a, b ->
+            def numA = (a.key =~ /\d+$/)[0] as Integer
+            def numB = (b.key =~ /\d+$/)[0] as Integer
+            numA <=> numB
+        }.each { entry ->
+            keysList.add(entry.value)
+        }
+    }
+
+    if (keysList.isEmpty()) {
+        println "WARNING: No CLOUDCONVERT_API_KEY_n entries found in local.properties. CLOUDCONVERT_API_KEYS will be an empty array."
+    } else {
+        println "Found and configured CLOUDCONVERT_API_KEYS with ${keysList.size()} keys."
+    }
+    return keysList
+}
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -14,6 +51,23 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // --- For multiple API Keys array ---
+        def cloudconvertKeysList = getApiKeysList() // Call the function
+
+        if (cloudconvertKeysList.isEmpty()) {
+            // If no keys like CLOUDCONVERT_API_KEY_1, CLOUDCONVERT_API_KEY_2 are found,
+            // create an empty array in BuildConfig. This is important to avoid build errors.
+            buildConfigField "String[]", "CLOUDCONVERT_API_KEYS", "{}"
+        } else {
+            // Each string in the list needs to be quoted for the Java array initializer
+            def formattedKeysString = cloudconvertKeysList.collect { "\"${it}\"" }.join(", ")
+            buildConfigField "String[]", "CLOUDCONVERT_API_KEYS", "{ ${formattedKeysString} }"
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
     }
 
     buildTypes {
@@ -31,17 +85,28 @@ android {
 }
 
 dependencies {
-
     implementation libs.appcompat
     implementation libs.material
     implementation libs.activity
     implementation libs.constraintlayout
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Your libraries
     implementation libs.glide
     annotationProcessor libs.glide.compiler
-    implementation 'org.apache.poi:poi:5.2.3'
-    implementation 'org.apache.poi:poi-ooxml:5.2.3'
-    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.4'
+    implementation libs.poi
+    implementation libs.poi.ooxml
+    coreLibraryDesugaring libs.desugar.jdk.libs
+
+    // Retrofit + Gson for CloudConvert
+    implementation libs.retrofit
+    implementation libs.retrofit2.converter.gson
+    implementation libs.logging.interceptor
+
+    implementation libs.lifecycle.process
+    implementation libs.core.ktx // You added this
+
+    // Testing
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
 }

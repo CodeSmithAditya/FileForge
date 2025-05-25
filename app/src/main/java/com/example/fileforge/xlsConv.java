@@ -19,37 +19,40 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-// Import ImageView if you use it
+// Import ImageView if you need to programmatically change the fileIcon
 // import android.widget.ImageView;
-
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 
-// No HashMap or Map needed as no specific conversionOptions for PPT usually
-// import java.util.HashMap;
-// import java.util.Map;
+// No HashMap or Map needed as no specific conversionOptions for XLS usually
 
-public class pptConv extends AppCompatActivity implements ConversionListener {
+public class xlsConv extends AppCompatActivity implements ConversionListener {
 
     private Uri fileUri;
     private TextView fileNameTextView;
-    private Spinner formatSpinner;
+    private Spinner formatSpinner; // This is R.id.conversionOptionsSpinner
     private Button processButton;
     private ProgressBar progressBar;
     private LinearLayout progressContainer;
     private TextView progressText;
-    // private ImageView fileIconImageView;
+    // private ImageView fileIconImageView; // Declare if you need to change it programmatically
 
     private CloudConvertHelper cloudConvertHelper;
-    private static final String TAG = "pptConv";
+    private static final String TAG = "xlsConv";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ppt_conv); // Make sure you have activity_ppt_conv.xml
+        // Note: Your original xlsConv.java had EdgeToEdge.enable(this);
+        // and ViewCompat.setOnApplyWindowInsetsListener.
+        // I'm using the simpler setContentView like our other conv activities for consistency here.
+        // You can re-integrate EdgeToEdge if you prefer that look for this specific activity.
+        setContentView(R.layout.activity_xls_conv);
 
-        // fileIconImageView = findViewById(R.id.fileIcon);
+        // Initialize views (ensure IDs match your XML)
+        // ImageView fileIcon = findViewById(R.id.fileIcon);
+        // TextView appTitle = findViewById(R.id.appTitle);
         fileNameTextView = findViewById(R.id.fileNameTextView);
         formatSpinner = findViewById(R.id.conversionOptionsSpinner);
         processButton = findViewById(R.id.processFileButton);
@@ -64,19 +67,19 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
         if (fileUriStr != null) {
             fileUri = Uri.parse(fileUriStr);
             displayFileName(fileUri);
-            // if (fileIconImageView != null) fileIconImageView.setImageResource(R.drawable.ppt_icon);
+            // if (fileIconImageView != null) fileIconImageView.setImageResource(R.drawable.excel_icon);
         } else {
-            Toast.makeText(this, "No PPT/PPTX file selected", Toast.LENGTH_SHORT).show();
-            Log.e(TAG, "No fileUri passed to pptConv activity.");
+            Toast.makeText(this, "No Excel/CSV file selected", Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "No fileUri passed to xlsConv activity.");
             finish();
             return;
         }
 
-        // Output formats suitable for PPT/PPTX input
+        // Output formats suitable for XLS/XLSX/CSV input
         String[] outputFormats = {
-                "pdf", "pptx", "ppt", // Presentation/document formats
-                "docx", "doc", "txt",
-                "jpg", "png", "html"         // Images (slide by slide), web
+                "pdf", "csv", "xlsx", "xls", // Spreadsheet/document formats
+                "html",
+                "jpg", "png" // Image rendering of sheet/chart
         };
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this,
@@ -88,32 +91,34 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
 
         processButton.setOnClickListener(v -> {
             if (fileUri == null) {
-                Toast.makeText(pptConv.this, "No PPT/PPTX file selected.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(xlsConv.this, "No Excel/CSV file selected.", Toast.LENGTH_SHORT).show();
                 return;
             }
             String selectedFormat = formatSpinner.getSelectedItem().toString();
 
-            Log.d(TAG, "Process button clicked. Converting PPT to: " + selectedFormat);
+            Log.d(TAG, "Process button clicked. Converting Excel/CSV to: " + selectedFormat);
             showProgressBarUI();
-            // No specific options for PPT conversion usually, so pass null
+            // For Excel, typically no special conversion options are passed, so 'null' for options.
             cloudConvertHelper.startConversion(fileUri, selectedFormat, null, this);
         });
     }
 
     private void displayFileName(Uri uri) {
         String fileName = getFileNameFromUriForDisplay(uri);
-        fileNameTextView.setText(fileName != null ? fileName : "Unknown PPT File");
+        fileNameTextView.setText(fileName != null ? fileName : "Unknown Excel/CSV File");
     }
 
     private String getFileNameFromUriForDisplay(Uri uri) {
-        // Identical to other "conv" activities
+        // This method is identical to the one in other "conv" activities
         String result = null;
-        if (uri == null) return "Unknown PPT File";
+        if (uri == null) return "Unknown Excel/CSV File";
         if ("content".equals(uri.getScheme())) {
             try (Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
                 if (cursor != null && cursor.moveToFirst()) {
                     int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
-                    if (nameIndex >= 0) { result = cursor.getString(nameIndex); }
+                    if (nameIndex >= 0) {
+                        result = cursor.getString(nameIndex);
+                    }
                 }
             } catch (Exception e) { Log.w(TAG, "Error getting filename from URI for display", e); }
         }
@@ -124,7 +129,7 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
                 result = (cut != -1) ? path.substring(cut + 1) : path;
             }
         }
-        return result != null ? result : "Unknown PPT File";
+        return result != null ? result : "Unknown Excel/CSV File";
     }
 
     private void showProgressBarUI() {
@@ -142,7 +147,7 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
         progressContainer.setVisibility(View.GONE);
     }
 
-    // --- ConversionListener Implementation (Identical structure) ---
+    // --- ConversionListener Implementation (Identical structure to other conv activities) ---
     @Override
     public void onJobCreated(String jobId) {
         Log.i(TAG, "Listener: Job created: " + jobId);
@@ -174,7 +179,7 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
         Log.i(TAG, "Listener: Conversion successful! URL: " + downloadUrl);
         runOnUiThread(() -> {
             hideProgressBarUI();
-            Toast.makeText(pptConv.this, filename + " ready!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(xlsConv.this, filename + " ready!", Toast.LENGTH_SHORT).show();
 
             if (AppLifecycleObserver.isAppInForeground()) {
                 Log.d(TAG, "App is foreground, starting DownScr activity directly.");
@@ -186,7 +191,7 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
                 editor.putString(Constants.KEY_PENDING_DOWNLOAD_URL, downloadUrl);
                 editor.putString(Constants.KEY_PENDING_FILENAME, filename);
                 editor.apply();
-                Log.i(TAG, "Saved pending download to SharedPreferences for PPT conversion.");
+                Log.i(TAG, "Saved pending download to SharedPreferences for XLS conversion.");
                 showConversionCompleteNotification(downloadUrl, filename);
             }
             finish();
@@ -198,7 +203,7 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
         Log.e(TAG, "Listener: Conversion Error: " + message);
         runOnUiThread(() -> {
             hideProgressBarUI();
-            Toast.makeText(pptConv.this, "Error: " + message, Toast.LENGTH_LONG).show();
+            Toast.makeText(xlsConv.this, "Error: " + message, Toast.LENGTH_LONG).show();
         });
     }
 
@@ -207,12 +212,12 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
         Log.e(TAG, "Listener: Conversion timed out.");
         runOnUiThread(() -> {
             hideProgressBarUI();
-            Toast.makeText(pptConv.this, "Error: Conversion process timed out.", Toast.LENGTH_LONG).show();
+            Toast.makeText(xlsConv.this, "Error: Conversion process timed out.", Toast.LENGTH_LONG).show();
         });
     }
 
     private void startDownScrActivity(String downloadUrl, String filename) {
-        Intent intent = new Intent(pptConv.this, DownScr.class);
+        Intent intent = new Intent(xlsConv.this, DownScr.class);
         intent.putExtra("downloadUrl", downloadUrl);
         intent.putExtra("filename", filename);
         startActivity(intent);
@@ -228,21 +233,23 @@ public class pptConv extends AppCompatActivity implements ConversionListener {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             flags |= PendingIntent.FLAG_IMMUTABLE;
         }
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 103, intent, flags); // Unique request code 103
+        // Use a new, unique request code for xlsConv's PendingIntent
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 106, intent, flags); // e.g., 106
 
         String channelId = MyApplication.CHANNEL_ID;
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
                 .setSmallIcon(R.drawable.ic_notification)
-                .setContentTitle("FileForge: PPT Conversion Complete")
+                .setContentTitle("FileForge: Excel Conversion Complete") // Specific title
                 .setContentText("'" + filename + "' is ready to download.")
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
 
-        notificationManager.notify(Constants.NOTIFICATION_ID_CONVERSION_COMPLETE + 2, builder.build()); // Unique notification ID
-        Log.d(TAG, "PPT Conversion complete notification shown for: " + filename);
+        // Use a new, unique notification ID for xlsConv
+        notificationManager.notify(Constants.NOTIFICATION_ID_CONVERSION_COMPLETE + 5, builder.build()); // e.g., base + 5
+        Log.d(TAG, "Excel Conversion complete notification shown for: " + filename);
     }
 }

@@ -32,5 +32,39 @@
         <item>YouTube Thumbnail (1280x720)</item>
     </string-array>
 
+    <string name="save_to_downloads">Save to Downloads</string>
+    <string name="error_create_download_folder">Error: Could not create download folder.</string>
+    <string name="download_started_check_notifications">Download started! Check notifications.</string>
+    <string name="downloading_text">Downloading...</string>
+    <string name="starting_download_text">Starting download...</string>
+    <string name="downloading_progress_unknown_size">Downloading... (%s)</string>
+    <string name="download_pending_text">Download Pending...</string>
+    <string name="download_complete_percentage">100%% (%s)</string>
+    <string name="download_failed_text">Download Failed</string>
+    <string name="downloaded_successfully_toast">\'%s\' downloaded successfully!</string>
+    <string name="download_complete_button_text">Download Complete</string>
+    <string name="download_failed_toast_format">Download failed for \'%1$s\'. Reason: %2$s</string>
+    <string name="download_failed_retry_button_text">Download Failed - Retry?</string>
+    <string name="download_ended_status_toast_format">Download ended with status: %1$d for \'%2$s\'</string>
+    <string name="download_status_generic_text">Status: %d</string>
+    <string name="download_status_could_not_be_verified_toast">Download status could not be verified.</string>
+    <string name="error_querying_download_status_toast">Error querying download status.</string>
+    <string name="error_could_not_start_download">Error: Could not start download.</string>
+
+    <string name="download_error_cannot_resume">Cannot Resume</string>
+    <string name="download_error_device_not_found">Device Not Found</string>
+    <string name="download_error_file_already_exists">File Already Exists</string>
+    <string name="download_error_file_error">File Error</string>
+    <string name="download_error_http_data_error">HTTP Data Error</string>
+    <string name="download_error_insufficient_space">Insufficient Space</string>
+    <string name="download_error_too_many_redirects">Too Many Redirects</string>
+    <string name="download_error_unhandled_http_code">Unhandled HTTP Code</string>
+    <string name="download_error_unknown">Unknown Error</string>
+    <string name="download_paused_queued_for_wifi">Paused - Waiting for WiFi</string>
+    <string name="download_paused_unknown">Paused - Unknown</string>
+    <string name="download_paused_waiting_for_network">Paused - Waiting for Network</string>
+    <string name="download_paused_waiting_to_retry">Paused - Waiting to Retry</string>
+    <string name="download_error_code_format">Error Code: %d</string>
+
 
 </resources>
